@@ -21,6 +21,6 @@ public class Main {
         System.out.println(mate);
         System.out.println(kata);
 
-
+        Krokodil merges = new Krokodil(12, 123, true, 26);
     }
 }
