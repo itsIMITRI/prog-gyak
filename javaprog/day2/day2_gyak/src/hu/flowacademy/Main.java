@@ -3,12 +3,12 @@ package hu.flowacademy;
 public class Main {
 
     public static void main(String[] args) {
-        if (args.length < 2) {
-            System.out.println("nincs elég bemenet");
+        if (args.length < 1) {
+            System.out.println("nem pont egy paramétert adtál meg");
             System.exit(0);
         }
-        int smallest = elso(args);
-        System.out.println(smallest);
+        //int smallest = elso(args);
+        //System.out.println(smallest);
         //int biggest = masodik(args);
         // System.out.println(biggest);
         //int sum = harmadik(args);
@@ -25,7 +25,8 @@ public class Main {
         // System.out.println(nyolcas);
         // String kilences = kilencedik(args);
         //  System.out.println(kilences);
-        tizedik(args);
+        //tizedik(args);
+        System.out.println(novekvoFg(args));
 
     }
 
@@ -178,5 +179,21 @@ public class Main {
         }
     }
 
+
+    public static String novekvoFg(String[] args){
+        boolean novekvo = false;
+        for(int i = 1; i < args.length; i++){
+            if(Integer.parseInt(args[i])>Integer.parseInt(args[i-1])){
+                novekvo=true;
+            }else{
+                novekvo = false;
+            }
+        }
+        if(novekvo==true) {
+            return "NÖVEKVŐ";
+        }else{
+            return "NEM NÖVEKVŐ";
+        }
+    }
 
 }
