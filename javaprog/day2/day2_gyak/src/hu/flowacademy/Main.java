@@ -26,7 +26,11 @@ public class Main {
         // String kilences = kilencedik(args);
         //  System.out.println(kilences);
         //tizedik(args);
-        System.out.println(novekvoFg(args));
+        //System.out.println(novekvoFg(args));
+        //System.out.println(szamologep(args));
+        System.out.println(szamolo2(args));
+
+
 
     }
 
@@ -194,6 +198,57 @@ public class Main {
         }else{
             return "NEM NÖVEKVŐ";
         }
+    }
+
+    public static double szamologep(String[] args){
+        int a = Integer.parseInt(args[0]);
+        int b = Integer.parseInt(args[2]);
+        System.out.println(a);
+        System.out.println(b);
+        if(args[1].equals("+")){
+            return a+b;
+        }
+        if(args[1].equals("-")){
+            return a-b;
+        }
+        if(args[1].equals("x")){
+            return a*b;
+        }
+        if(args[1].equals("/")) {
+            return (double)a / b;
+        }
+        return Integer.MIN_VALUE;
+    }
+
+
+    public static double szamolo2(String[] args){
+        int result = Integer.parseInt(args[1]);
+        String temp;
+        for(int i = 2; i < args.length; i++){
+
+            if(args[i].charAt(0)=='+'){
+                temp = args[i];
+                temp = Integer.parseInt(args[i].[1]);
+                System.out.println(temp);
+                result += temp;
+            }
+            if(args[i].charAt(0)=='-'){
+                temp = args[i].charAt(1);
+                System.out.println(temp);
+                result -= temp;
+            }
+            if(args[i].charAt(0)=='x'){
+                temp = args[i].charAt(1);
+                System.out.println(temp);
+                result *= temp;
+            }
+            if(args[i].charAt(0)=='/'){
+                temp = args[i].charAt(1);
+                System.out.println(temp);
+                result /= temp;
+            }
+        }
+        return (double)result;
     }
 
 }
