@@ -1,4 +1,4 @@
-package hu.flowacademy;
+package hu.flowacademy.interfacek;
 
 public interface Milliardos {
 
