@@ -20,7 +20,7 @@ public class Butor {
     public double arSzamol(){
         int res = 0;
         for(int i =0; i < lapokSzama;i++){
-            res += butorlapok[i].arSzamol();
+            res += butorlapok[i].arSzamol()/100;
         } return res;
     }
 
