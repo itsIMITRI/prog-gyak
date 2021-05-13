@@ -18,6 +18,13 @@ public class Car implements Comparator<Car> {
         this.price = price;
     }
 
+    public int compare(Car car1, Car car2) {
+        if (!(car1.getkW() == car2.getkW())) {
+            return car1.getkW() > car2.getkW() ? 1 : -1;
+        }
+        return Integer.compare(car1.getPrice(), car2.getPrice());
+    }
+
     public String getColor() {
         return color;
     }
@@ -58,7 +65,6 @@ public class Car implements Comparator<Car> {
         this.price = price;
     }
 
-    @Override
 
 
     @Override
@@ -71,4 +77,6 @@ public class Car implements Comparator<Car> {
                 ", price=" + price +
                 '}';
     }
+
+
 }
