@@ -8,6 +8,24 @@ public class MyList<T> {
         tomb = new Object[size];
         this.index = 0;
     }
+//Remove(index): adja vissza a tömb adott indexen lévő elemét, és törölje ki a listából,
+// ha létezik! Ha nem, dobjon kivételt!
+//Clear(): törölje ki az összes elemet a tömbből, az indexet állítsa 0-ra!
+
+    public void clear(){
+            tomb = null;
+            tomb = new Object[1];
+        index = 0;
+    }
+
+    public Object remove(int ind){
+        T removed = (T) tomb[ind];
+        Object[] newTomb = new Object[index-1];
+        for (int i = 0; i < tomb.length; i++){
+
+        }
+        return removed;
+    }
 
     public void add(T e) {
         if (index > tomb.length - 1) {

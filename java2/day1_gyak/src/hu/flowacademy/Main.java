@@ -20,6 +20,17 @@ public class Main {
         System.out.println(lista.get(0));
         int a = (int) lista.get(0);
         System.out.println(a);
+        lista.clear();
+        lista.add(1);
+        lista.add(2);
+        lista.add(3);
+        System.out.println(lista.get(0));
+        System.out.println(lista.get(1));
+        System.out.println(lista.get(2));
+        lista.remove(1);
+        System.out.println(lista.get(1));
+        System.out.println(lista.get(2));
+
 
 
     }
