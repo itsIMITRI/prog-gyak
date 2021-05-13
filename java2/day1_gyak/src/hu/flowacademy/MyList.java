@@ -1,6 +1,6 @@
 package hu.flowacademy;
 
-public class MyList<T> {
+public class MyList<T> implements Test<T>{
     private int index;
     protected Object[] tomb;
 
@@ -52,13 +52,39 @@ public class MyList<T> {
     }
 
     public Object set(int ind, T t) {
-        try{
+        try {
             tomb[ind] = t;
-           return tomb[ind];
-        }
-        catch (ArrayIndexOutOfBoundsException e) {
+            return tomb[ind];
+        } catch (ArrayIndexOutOfBoundsException e) {
             return "Nincs ilyen elem!";
         }
     }
 
+
+
+    public String toString(){
+        String str = "";
+        for (int i = 0; i < tomb.length; i++){
+            str+=tomb[i] + " ";
+        }
+        return str;
+    }
+ //Készítsünk egy filter függvényt a lista implementációnkba, amely egy Test funkcionális interface paramétert vár,
+ // és végigfut a kollekción, minden elemre meghívja a test függvényt, és amire igazzal tér vissza, azt egy listába teszi,
+ // majd azt adja vissza!
+
+    public MyList filter(Test<T> t){
+        MyList<T> newList = new MyList<>(1);
+        for(int i = 0; i < tomb.length; i++){
+            if(t.test((T) tomb[i])){
+                newList.add((T) tomb[i]);
+            }
+        }
+        return newList;
+    }
+
+    @Override
+    public boolean test(T e) {
+        return false;
+    }
 }
