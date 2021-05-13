@@ -1,6 +1,6 @@
 package hu.flowacademy;
 
-public class MyList<T> implements Test<T>{
+public class MyList<T> {
     private int index;
     protected Object[] tomb;
 
@@ -82,9 +82,5 @@ public class MyList<T> implements Test<T>{
         }
         return newList;
     }
-
-    @Override
-    public boolean test(T e) {
-        return false;
-    }
+    
 }
