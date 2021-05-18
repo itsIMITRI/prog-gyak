@@ -1,5 +1,7 @@
 package hu.flowacademy;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class MyList<T> {
@@ -85,6 +87,30 @@ public class MyList<T> {
         return newList;
     }
 
+    public void forEach(Consumer<T> t){
+        for(int i = 0; i < tomb.length; i++){
+            t.accept((T) tomb[i]);
+        }
+    }
 
+    //Készítsünk egy change függvényt a lista implementációnkba, amely egy Function interface paramétert vár,
+    // aminek a paramétere és visszatérési értéke is megegyezik az osztály generikus paraméterével!
+    // A függvény adjon vissza egy új listát, mely a régi lista elemeit tartalmazza a függvény végrehajtása után!
 
+    public MyList change(Function<T, T> t){
+        MyList<T> newList = new MyList<>(1);
+        for(int i = 0 ; i < tomb.length; i++){
+            newList.add(t.apply((T) tomb[i]));
+        }
+        return newList;
+    }
+
+    //Készítsünk egy map függvényt a lista implementációnkba, amely egy Function interface paramétert vár.
+    // A Function paramétere megegyező típus a lista generikusával, visszatérési értéke generikus,
+    // de nem feltétlen ugyanaz, mint a listáé (generikus függvény!) Adjon vissza egy új kollekciót,
+    // mely a régi lista elemeit tartalmazza a függvény végrehajtása után!
+
+    public MyList<T> map(Function<T,T>){
+
+    }
 }

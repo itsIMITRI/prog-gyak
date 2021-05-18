@@ -31,6 +31,13 @@ public class Main {
 
         System.out.println(lista);
         System.out.println(lista.filter((num) -> num % 2 == 0));
+        lista.forEach(num -> {System.out.println(num);});
+        System.out.println("**********");
+        //lista.forEach(System.out::println);
+        lista.change(t -> {
+            System.out.println(t);
+            return t;
+        });
 
     }
 }
