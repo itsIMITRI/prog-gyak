@@ -1,5 +1,7 @@
 package hu.flowacademy;
 
+import java.util.function.Predicate;
+
 public class MyList<T> {
     private int index;
     protected Object[] tomb;
@@ -73,7 +75,7 @@ public class MyList<T> {
  // és végigfut a kollekción, minden elemre meghívja a test függvényt, és amire igazzal tér vissza, azt egy listába teszi,
  // majd azt adja vissza!
 
-    public MyList filter(Test<T> t){
+    public MyList filter(Predicate<T> t){
         MyList<T> newList = new MyList<>(1);
         for(int i = 0; i < tomb.length; i++){
             if(t.test((T) tomb[i])){
@@ -82,5 +84,7 @@ public class MyList<T> {
         }
         return newList;
     }
-    
+
+
+
 }

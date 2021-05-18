@@ -30,7 +30,7 @@ public class Main {
         System.out.println(lista.get(2));
 
         System.out.println(lista);
-        System.out.println(lista.filter((szam) -> szam % 2 == 0));
+        System.out.println(lista.filter((num) -> num % 2 == 0));
 
     }
 }

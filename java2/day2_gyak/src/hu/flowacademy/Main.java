@@ -17,6 +17,7 @@ public class Main {
 		System.out.println(characterConcordance("Hello World"));
 
 	Stack<String> verem = new Stack(5);
+	Stack<Integer> verem2 = new Stack<>(5);
 
 	verem.push("maki");
 	verem.push("maki2");
@@ -28,8 +29,7 @@ public class Main {
 	System.out.println(verem.pop());
 	System.out.println(verem.pop());
 	//System.out.println(verem.pop());
-
-
+		
 		hess();
 	}
 	//Write a program which creates a concordance of characters occurring in a string
