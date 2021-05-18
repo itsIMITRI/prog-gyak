@@ -7,7 +7,7 @@ public class Main {
     lista.add(12);
     lista.add(22);
     lista.add(24);
-        MyList<String> lista2 = new MyList<>(5);
+        MyList<String> lista2 = new MyList<>(2);
     lista2.add("alma");
     lista2.add("körte");
         System.out.println(lista.get(0));
@@ -35,9 +35,10 @@ public class Main {
         System.out.println("**********");
         //lista.forEach(System.out::println);
         lista.change(t -> {
-            System.out.println(t);
-            return t;
-        });
+            return t*2;
+        }).forEach(System.out::println);
+        System.out.println("**********");
 
+        lista2.map((str) -> str.length()).forEach(System.out::println);
     }
 }

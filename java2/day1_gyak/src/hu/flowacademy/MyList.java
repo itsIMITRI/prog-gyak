@@ -97,7 +97,7 @@ public class MyList<T> {
     // aminek a paramétere és visszatérési értéke is megegyezik az osztály generikus paraméterével!
     // A függvény adjon vissza egy új listát, mely a régi lista elemeit tartalmazza a függvény végrehajtása után!
 
-    public MyList change(Function<T, T> t){
+    public MyList<T> change(Function<T, T> t){
         MyList<T> newList = new MyList<>(1);
         for(int i = 0 ; i < tomb.length; i++){
             newList.add(t.apply((T) tomb[i]));
@@ -110,7 +110,11 @@ public class MyList<T> {
     // de nem feltétlen ugyanaz, mint a listáé (generikus függvény!) Adjon vissza egy új kollekciót,
     // mely a régi lista elemeit tartalmazza a függvény végrehajtása után!
 
-    public MyList<T> map(Function<T,T>){
-
+    public <E> MyList<E> map(Function<T,E> t){
+        MyList<E> newList = new MyList<E>(1);
+        for(int i = 0; i < tomb.length; i++){
+            newList.add(t.apply ((T) tomb[i]));
+        }
+        return newList;
     }
 }
